@@ -2,7 +2,6 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
 # Load the model and tokenizer
-#model_name = "r3ddkahili/final-complete-malicious-url-model"
 tokenizer = AutoTokenizer.from_pretrained("distilbert_url")
 model = AutoModelForSequenceClassification.from_pretrained("distilbert_url")
 
@@ -18,3 +17,4 @@ with torch.no_grad():
 # Mapping prediction to labels
 label_map = {0: "Benign", 1: "Defacement", 2: "Phishing", 3: "Malware"}
 print(f"Prediction: {label_map[prediction]}")
+
